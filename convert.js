@@ -1,5 +1,5 @@
 // CSV source URL
-const csvURL = 'ral_classic.csv';
+const csvURL = 'https://technochicken.github.io/ral_classic.csv';
 
 let ralTable = {};  // Will store RAL code mappings
 
