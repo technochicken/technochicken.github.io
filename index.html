@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAL Color Converter</title>
+</head>
+<body>
+    <h1>RAL Color Converter</h1>
+
+    <!-- Input field for finding the closest RAL color -->
+    <div>
+        <h3>Find Closest RAL Color</h3>
+        <input type="text" id="hexInput" placeholder="Enter HEX value (e.g. #fff or ffffff)">
+        <button onclick="findClosestRal()">Find Closest RAL</button>
+        <p id="closestRalResult"></p>
+    </div>
+
+    <!-- Input field for converting RAL to HEX -->
+    <div>
+        <h3>Convert RAL to HEX</h3>
+        <input type="text" id="ralInput" placeholder="Enter RAL code (e.g. RAL 1000)">
+        <button onclick="convertRalToHex()">Convert to HEX</button>
+        <p id="ralToHexResult"></p>
+    </div>
+
+    <!-- Include PapaParse for CSV parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <!-- Include the converter library -->
+    <script src="convert.js"></script>
+</body>
+</html>
