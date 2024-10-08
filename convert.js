@@ -26,7 +26,7 @@ function processCSVData(data) {
         if (ralCode && hexValue && rgbValue) {
             lookupTable[ralCode] = {
                 hex: hexValue,
-                name: row.English ? row.English.trim() : "Unknown",
+                name: row.German ? row.German.trim() : "Unknown",
                 rgb: rgbValue
             };
         }
