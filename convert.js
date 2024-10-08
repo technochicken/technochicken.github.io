@@ -18,12 +18,18 @@ function loadRALData() {
 function processCSVData(data) {
     const lookupTable = {};
     data.forEach(row => {
-        const ralCode = row.RAL.trim();
-        lookupTable[ralCode] = {
-            hex: row.HEX,
-            name: row.English,
-            rgb: row.RGB.split('-').map(Number)
-        };
+        const ralCode = row.RAL ? row.RAL.trim() : null;
+        const hexValue = row.HEX ? row.HEX.trim() : null;
+        const rgbValue = row.RGB ? row.RGB.split('-').map(Number) : null;
+
+        // Only process rows that have valid RAL and HEX values
+        if (ralCode && hexValue && rgbValue) {
+            lookupTable[ralCode] = {
+                hex: hexValue,
+                name: row.English ? row.English.trim() : "Unknown",
+                rgb: rgbValue
+            };
+        }
     });
     return lookupTable;
 }
